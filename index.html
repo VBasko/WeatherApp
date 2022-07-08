@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="document">
+    <div class="main-card">
+      <div class="row">
+        <!-------------------The left part of card-------------------------->
+        <div class="col-9 left-part">
+          <!-------------------The city and search-------------------------->
+          <div class="header">
+            <div class="header-container">
+              <div class="current-city">
+                <button id="current-location" class="no-style">
+                    <span
+                      class="iconify"
+                      data-icon="bi:geo-alt"
+                      style="color: #535659"
+                    ></span>
+                </button>  
+                <span id="current-city">
+                  Batumi
+                </span>
+              </div>
+              <div class="search-container">
+                <form class="search-form" id="search-form">
+                  <input
+                    type="search"
+                    name=""
+                    id="search-input"
+                    class="search-input"
+                    placeholder="Search"
+                    autocomplete="off"
+                  />
+
+                  <button type="submit" class="no-style">
+                    <span
+                      class="iconify"
+                      data-icon="akar-icons:search"
+                      style="color: #535659; padding-bottom: 1px"
+                      data-rotate="90deg"
+                    ></span>
+                  </button>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-------------------The current weather-------------------------->
+          <div class="current-weather">
+            <div class="current-weather-container">
+              <div class="weather-icon">
+                <span
+                  class="iconify"
+                  data-icon="wi:day-cloudy"
+                  style="color: #535659; font-size: 200px"
+                ></span>
+              </div>
+              <div class="weather-text">
+                <div class="temperature">
+                  <span id="current-temperature">19</span>
+                  <div class="units">
+                    <a hre="#" class="celsius active" id="celcius">°C</a>
+                    <span class="vertical-line">|</span>
+                    <a href="#" class="farhenheit" id="farhenheit">°F</a>
+                  </div>
+                </div>
+                <div class="day-and-time" id="day-and-time">Saturday 19:00</div>
+              </div>
+            </div>
+          </div>
+          <!-------------------The forecast-------------------------->
+          <div class="forecast">
+            <div class="forecast-area">
+              <div class="forecast-card active">
+                <p class="day-of-week">Sat</p>
+                <span
+                  class="iconify mini-icon"
+                  data-icon="wi:day-cloudy"
+                  style="color: #535659"
+                ></span>
+                <p class="weather">26° / 19°</p>
+              </div>
+              <div class="forecast-card">
+                <p class="day-of-week">Sun</p>
+                <span
+                  class="iconify mini-icon"
+                  data-icon="wi:day-lightning"
+                  style="color: #535659"
+                ></span>
+                <p class="weather">26° / 19°</p>
+              </div>
+              <div class="forecast-card">
+                <p class="day-of-week">Mon</p>
+                <span
+                  class="iconify mini-icon"
+                  data-icon="wi:day-sunny"
+                  style="color: #535659"
+                ></span>
+                <p class="weather">26° / 19°</p>
+              </div>
+              <div class="forecast-card">
+                <p class="day-of-week">Tue</p>
+                <span
+                  class="iconify mini-icon"
+                  data-icon="wi:day-rain"
+                  style="color: #535659"
+                ></span>
+                <p class="weather">26° / 19°</p>
+              </div>
+              <div class="forecast-card">
+                <p class="day-of-week">Wed</p>
+                <span
+                  class="iconify mini-icon"
+                  data-icon="wi:rain"
+                  style="color: #535659"
+                ></span>
+                <p class="weather">26° / 19°</p>
+              </div>
+            </div>
+          </div>
+
+          <!-------Author info--------->
+          <div class="author">
+            <div class="creator">Created by 
+              <span class="name">Viktoriia Basko</span>
+            </div>
+          </div>
+        </div>
+
+        <!-------------------The right part of card-------------------------->
+        <div class="col-3 right-part">
+          <ul class="weather-details">
+            <li>Precipitation: <span id="precipitation">2</span>%</li>
+            <li>Humidity: <span id="humidity">90</span>%</li>
+            <li>Wind: <span id="wind">0</span> km/h</li>
+          </ul>
+          <img src="images/rain.svg" alt="" />
+        </div>
+      </div>
+
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="src/script.js"></script>
+  </body>
+</html>

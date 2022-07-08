@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.document {
+  max-height: 100vh;
+  width: 100%;
+  background-color: #d3d3e0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  color: #535659;
+  font-size: 18px;
+}
+
+/*----------------The content card---------*/
+.main-card {
+  display: block;
+  margin: 5% auto;
+  min-width: 840px;
+  width: 70%;
+  background: linear-gradient(110.02deg, #ddddea 3.45%, #c9c9d6 96.73%);
+  box-shadow: 40px 40px 40px #b9b9c6, -40px -40px 40px #ddddea;
+  border-radius: 40px;
+  border-left: 1px solid rgb(201, 201, 214, 0.8);
+  border-top: 1px solid rgb(201, 201, 214, 0.8);
+  border-bottom: 1px solid #d3d3e0;
+}
+
+/*-------------------City and search--------------------------*/
+
+.header-container {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+}
+
+#current-location {
+  position: relative;
+  padding: 0 10px;
+  bottom: 3px;
+}
+
+.current-city {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e3e3f0;
+  width: 250px;
+  border-radius: 30px;
+  color: #7b7b7b;
+}
+
+.search-form input {
+  background: transparent;
+  border: none;
+  font-family: "Rokkitt", serif;
+}
+
+.no-style {
+  box-shadow: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+/*----------------Current weather---------*/
+
+.current-weather {
+  padding-top: 20px;
+  margin-left: 24px;
+}
+
+.current-weather-container {
+  display: flex;
+  text-align: left;
+}
+
+.weather-text {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-left: 60px;
+}
+
+.temperature {
+  font-size: 80px;
+  line-height: 1;
+  display: flex;
+}
+
+.units {
+  font-size: 30px;
+  font-weight: 100;
+  position: relative;
+  padding: 8px;
+}
+
+.units a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.units a:hover {
+  color: #efeff4;
+}
+
+.units .active {
+  font-weight: 500;
+}
+
+.day-and-time {
+  font-size: 30px;
+  padding-top: 15px;
+}
+
+/*----------------Forecast---------*/
+.forecast {
+  display: block;
+  margin: 0 30px 20px;
+}
+
+.forecast-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forecast-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(135deg, #ddddea 0%, #c9c9d6 100%);
+  box-shadow: -7px -7px 7px #ddddea, 7px 7px 7px #c9c9d6;
+  border-radius: 20px;
+  transition: all 0.1s ease;
+}
+
+.forecast-card.active {
+  background: linear-gradient(#ddddea, #c9c9d6);
+  box-shadow: inset -7px -7px 7px #ddddea, inset 7px 7px 7px #c9c9d6;
+  border-radius: 20px;
+}
+
+.forecast-card:hover {
+  cursor: pointer;
+  background: linear-gradient(#ececf9, #d8d8e5);
+}
+
+.forecast-card .day-of-week,
+.forecast-card .weather {
+  margin: 0;
+  padding: 0;
+}
+
+.forecast-card .mini-icon {
+  flex-shrink: 0;
+  font-size: 50px;
+}
+
+.forecast-card .weather {
+  font-family: "Rokkitt";
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+/*----------------The right part of card---------*/
+.right-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  background: linear-gradient(164.43deg, #d8d8e5 0%, #d3d3e0 100%);
+  border-radius: 0px 40px 40px 0px;
+}
+
+.weather-details {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 96px 0 0;
+}
+
+.weather-details li {
+  line-height: 2;
+}
+
+.right-part img {
+  width: 180px;
+  position: relative;
+  bottom: -10px;
+}
+
+/*----------------Author info---------*/
+.author {
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 100;
+}
