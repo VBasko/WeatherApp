@@ -204,6 +204,15 @@
 }
 
 /*----------------Author info---------*/
+.git-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.git-link:hover {
+  color: #efeff4;
+}
+
 .author {
   padding-bottom: 20px;
   text-align: center;
