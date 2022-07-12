@@ -10,7 +10,6 @@ let days = [
   "Saturday",
 ];
 let day = days[currentDate.getDay()];
-console.log(day);
 let hours = currentDate.getHours();
 let minutes = currentDate.getMinutes();
 if (minutes < 10) {
@@ -34,6 +33,7 @@ let currentTemperature = document.querySelector("#current-temperature");
 let currentHumidity = document.querySelector("#humidity");
 let currentWind = document.querySelector("#wind");
 let currentCity = document.querySelector("#current-city");
+let currentWeatherDescription = document.querySelector("#description");
 
 axios.get(apiUrl).then(displayWeather);
 
@@ -42,12 +42,15 @@ function displayWeather(response) {
   let temp = Math.round(response.data.main.temp);
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
+  let description = response.data.weather[0].description;
+  console.log(description);
   celsiusTemperature = response.data.main.temp;
 
   currentCity.innerHTML = `${cityName}`;
   currentTemperature.innerHTML = `${temp}`;
   currentHumidity.innerHTML = `${humidity}`;
   currentWind.innerHTML = `${wind}`;
+  currentWeatherDescription.innerHTML = `${description}`;
 }
 /*-----x------ Show real weather -------x-----*/
 

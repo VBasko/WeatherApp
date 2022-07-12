@@ -203,6 +203,10 @@
   line-height: 2;
 }
 
+.weather-details #description::first-letter {
+  text-transform: capitalize;
+}
+
 .right-part img {
   width: 180px;
   position: relative;
