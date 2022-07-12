@@ -31,7 +31,6 @@ let units = "metric";
 let apiUrlStaticPart = "https://api.openweathermap.org/data/2.5/weather?";
 let apiUrl = `${apiUrlStaticPart}q=batumi&appid=${apiKey}&units=${units}`;
 let currentTemperature = document.querySelector("#current-temperature");
-let currentPrecipitation = document.querySelector("#precipitation");
 let currentHumidity = document.querySelector("#humidity");
 let currentWind = document.querySelector("#wind");
 let currentCity = document.querySelector("#current-city");
@@ -41,12 +40,12 @@ axios.get(apiUrl).then(displayWeather);
 function displayWeather(response) {
   let cityName = response.data.name;
   let temp = Math.round(response.data.main.temp);
-  let precipitation = "---";
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
+  celsiusTemperature = response.data.main.temp;
+
   currentCity.innerHTML = `${cityName}`;
   currentTemperature.innerHTML = `${temp}`;
-  currentPrecipitation.innerHTML = `${precipitation}`;
   currentHumidity.innerHTML = `${humidity}`;
   currentWind.innerHTML = `${wind}`;
 }
@@ -95,6 +94,7 @@ let currentLocationBtn = document.querySelector("#current-location");
 currentLocationBtn.addEventListener("click", useCurrentPosition);
 
 /*----------- Choosing Units --------------*/
+let celsiusTemperature = null;
 
 let celsius = document.querySelector("#celcius");
 let farhenheit = document.querySelector("#farhenheit");
@@ -104,7 +104,7 @@ function convertToFarhenheit(event) {
   event.preventDefault();
   celsius.classList.remove("active");
   farhenheit.classList.add("active");
-  currentTemperature.innerHTML = `66`;
+  currentTemperature.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 
 farhenheit.addEventListener("click", convertToFarhenheit);
@@ -114,7 +114,7 @@ function convertToCelsius(event) {
   event.preventDefault();
   celsius.classList.add("active");
   farhenheit.classList.remove("active");
-  currentTemperature.innerHTML = `19`;
+  currentTemperature.innerHTML = Math.round(celsiusTemperature);
 }
 
 celsius.addEventListener("click", convertToCelsius);

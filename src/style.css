@@ -118,6 +118,11 @@
   font-weight: 500;
 }
 
+.units .active:hover {
+  cursor: default;
+  color: #535659;
+}
+
 .day-and-time {
   font-size: 30px;
   padding-top: 15px;
@@ -180,6 +185,7 @@
 .right-part {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   text-align: left;
   background: linear-gradient(164.43deg, #d8d8e5 0%, #d3d3e0 100%);
@@ -200,7 +206,7 @@
 .right-part img {
   width: 180px;
   position: relative;
-  bottom: -10px;
+  bottom: 60px;
 }
 
 /*----------------Author info---------*/
