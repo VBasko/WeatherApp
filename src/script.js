@@ -119,7 +119,7 @@ function displayWeather(response) {
   let cityName = response.data.name;
   let temp = Math.round(response.data.main.temp);
   let humidity = response.data.main.humidity;
-  let wind = Math.round(response.data.wind.speed);
+  let wind = Math.round(response.data.wind.speed * 3.6);
   let description = response.data.weather[0].description;
   let icon = response.data.weather[0].icon;
   celsiusTemperature = response.data.main.temp;
