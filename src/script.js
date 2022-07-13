@@ -30,71 +30,71 @@ function choosePicture(icon) {
   let pic = "";
   switch (icon) {
     case "01d":
-      pic = "wi:day-sunny";
+      pic = `<span class="iconify" data-icon="wi:day-sunny" id="icon"></span>`;
       break;
     case "01n":
-      pic = "wi:night-clear";
+      pic = `<span class="iconify" data-icon="wi:night-clear" id="icon"></span>`;
       break;
     case "02d":
-      pic = "wi:day-cloudy";
+      pic = `<span class="iconify" data-icon="wi:day-cloudy" id="icon"></span>`;
       break;
     case "02n":
-      pic = "wi:night-cloudy";
+      pic = `<span class="iconify" data-icon="wi:night-cloudy" id="icon"></span>`;
       break;
     case "03d":
-      pic = "wi:cloud";
+      pic = `<span class="iconify" data-icon="wi:cloud" id="icon"></span>`;
 
       break;
     case "03n":
-      pic = "wi:cloud";
+      pic = `<span class="iconify" data-icon="wi:cloud" id="icon"></span>`;
 
       break;
     case "04d":
-      pic = "wi:cloudy";
+      pic = `<span class="iconify" data-icon="wi:cloudy" id="icon"></span>`;
 
       break;
     case "04n":
-      pic = "wi:cloudy";
+      pic = `<span class="iconify" data-icon="wi:cloudy" id="icon"></span>`;
 
       break;
     case "09d":
-      pic = "wi:showers";
+      pic = `<span class="iconify" data-icon="wi:showers" id="icon"></span>`;
 
       break;
     case "09n":
-      pic = "wi:showers";
+      pic = `<span class="iconify" data-icon="wi:showers" id="icon"></span>`;
 
       break;
     case "10d":
-      pic = "wi:day-rain-mix";
+      pic = `<span class="iconify" data-icon="wi:day-rain-mix" id="icon"></span>`;
 
       break;
     case "10n":
-      pic = "wi:night-rain-mix";
+      pic = `<span class="iconify" data-icon="wi:night-rain-mix" id="icon"></span>`;
 
       break;
     case "11d":
-      pic = "wi:day-lightning";
+      pic = `<span class="iconify" data-icon="wi:day-lighting" id="icon"></span>`;
 
       break;
     case "11n":
-      pic = "wi:night-lightning";
+      pic = `<span class="iconify" data-icon="wi:night-lighting" id="icon"></span>`;
 
       break;
     case "13d":
-      pic = "wi:snowflake-cold";
+      pic = `<span class="iconify" data-icon="wi:snowflake-cold" id="icon"></span>`;
 
       break;
     case "13n":
-      pic = "wi:snowflake-cold";
+      pic = `<span class="iconify" data-icon="wi:snowflake-cold" id="icon"></span>`;
 
       break;
     case "50d":
-      pic = "wi:day-fog";
+      pic = `<span class="iconify" data-icon="wi:day-fog" id="icon"></span>`;
 
       break;
     case "50n":
-      pic = "wi:night-fog";
+      pic = `<span class="iconify" data-icon="wi:night-fog" id="icon"></span>`;
 
       break;
   }
@@ -111,7 +111,7 @@ let currentHumidity = document.querySelector("#humidity");
 let currentWind = document.querySelector("#wind");
 let currentCity = document.querySelector("#current-city");
 let currentWeatherDescription = document.querySelector("#description");
-let iconElement = document.querySelector("#icon");
+let iconElement = document.querySelector("#weather-icon");
 
 axios.get(apiUrl).then(displayWeather);
 
@@ -129,7 +129,7 @@ function displayWeather(response) {
   currentHumidity.innerHTML = `${humidity}`;
   currentWind.innerHTML = `${wind}`;
   currentWeatherDescription.innerHTML = `${description}`;
-  iconElement.setAttribute("data-icon", choosePicture(icon));
+  iconElement.innerHTML = `${choosePicture(icon)}`;
 }
 /*-----x------ Show real weather -------x-----*/
 

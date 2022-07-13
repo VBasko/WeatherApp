@@ -131,6 +131,14 @@
   font-size: 30px;
   padding-top: 15px;
 }
+#weather-icon {
+  padding: 0 20px 20px;
+}
+
+#icon {
+  color: #535659;
+  font-size: 160px;
+}
 
 /*----------------Forecast---------*/
 .forecast {
