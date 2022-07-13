@@ -63,6 +63,10 @@
   font-family: "Rokkitt", serif;
 }
 
+.search-form input:focus {
+  outline: none;
+}
+
 .no-style {
   box-shadow: none;
   border: none;

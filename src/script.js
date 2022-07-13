@@ -24,6 +24,83 @@ dayAndTime.innerHTML = `${day} ${hours}:${minutes}`;
 
 /*----------- Display searching city and weather --------------*/
 
+/*----------- Choose an icon from Iconify -------*/
+
+function choosePicture(icon) {
+  let pic = "";
+  switch (icon) {
+    case "01d":
+      pic = "wi:day-sunny";
+      break;
+    case "01n":
+      pic = "wi:night-clear";
+      break;
+    case "02d":
+      pic = "wi:day-cloudy";
+      break;
+    case "02n":
+      pic = "wi:night-cloudy";
+      break;
+    case "03d":
+      pic = "wi:cloud";
+
+      break;
+    case "03n":
+      pic = "wi:cloud";
+
+      break;
+    case "04d":
+      pic = "wi:cloudy";
+
+      break;
+    case "04n":
+      pic = "wi:cloudy";
+
+      break;
+    case "09d":
+      pic = "wi:showers";
+
+      break;
+    case "09n":
+      pic = "wi:showers";
+
+      break;
+    case "10d":
+      pic = "wi:day-rain-mix";
+
+      break;
+    case "10n":
+      pic = "wi:night-rain-mix";
+
+      break;
+    case "11d":
+      pic = "wi:day-lightning";
+
+      break;
+    case "11n":
+      pic = "wi:night-lightning";
+
+      break;
+    case "13d":
+      pic = "wi:snowflake-cold";
+
+      break;
+    case "13n":
+      pic = "wi:snowflake-cold";
+
+      break;
+    case "50d":
+      pic = "wi:day-fog";
+
+      break;
+    case "50n":
+      pic = "wi:night-fog";
+
+      break;
+  }
+  return pic;
+}
+
 /*----------- Show real weather ------------*/
 let apiKey = "4c6e3574ee40805d6cf2ed08e07f518d";
 let units = "metric";
@@ -34,6 +111,7 @@ let currentHumidity = document.querySelector("#humidity");
 let currentWind = document.querySelector("#wind");
 let currentCity = document.querySelector("#current-city");
 let currentWeatherDescription = document.querySelector("#description");
+let iconElement = document.querySelector("#icon");
 
 axios.get(apiUrl).then(displayWeather);
 
@@ -43,7 +121,7 @@ function displayWeather(response) {
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
   let description = response.data.weather[0].description;
-  console.log(description);
+  let icon = response.data.weather[0].icon;
   celsiusTemperature = response.data.main.temp;
 
   currentCity.innerHTML = `${cityName}`;
@@ -51,6 +129,7 @@ function displayWeather(response) {
   currentHumidity.innerHTML = `${humidity}`;
   currentWind.innerHTML = `${wind}`;
   currentWeatherDescription.innerHTML = `${description}`;
+  iconElement.setAttribute("data-icon", choosePicture(icon));
 }
 /*-----x------ Show real weather -------x-----*/
 
