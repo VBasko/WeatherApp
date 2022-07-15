@@ -127,10 +127,36 @@
   color: #535659;
 }
 
+.day-and-time-wrapper {
+  display: flex;
+}
+
 .day-and-time {
   font-size: 30px;
   padding-top: 15px;
 }
+
+.tooltip-object {
+  position: relative;
+  display: inline;
+  margin-top: 16px;
+  margin-left: 2px;
+}
+
+.tooltip-text {
+  font-weight: 100;
+  font-size: 14px;
+  visibility: hidden;
+  width: 80px;
+  color: #535659;
+  text-align: center;
+  position: absolute;
+}
+
+.tooltip-object:hover .tooltip-text {
+  visibility: visible;
+}
+
 #weather-icon {
   padding: 0 20px 20px;
 }
