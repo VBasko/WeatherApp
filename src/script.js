@@ -115,6 +115,38 @@ let iconElement = document.querySelector("#weather-icon");
 
 axios.get(apiUrl).then(displayWeather);
 
+function displayForecast() {
+  let forecastArea = document.querySelector("#forecast-area");
+
+  let forecastCard = "";
+
+  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  forecastDays.forEach(function (day) {
+    forecastCard =
+      forecastCard +
+      `
+      <div class="forecast-card">
+        <p class="day-of-week">${day}</p>
+          <span
+            class="iconify mini-icon"
+            data-icon="wi:day-cloudy"
+            style="color: #535659"          
+          ></span>
+        <p class="weather">26° / 19°</p>
+      </div>
+    `;
+  });
+
+  forecastArea.innerHTML = forecastCard;
+}
+
+displayForecast();
+
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  console.log(apiUrl);
+}
+
 function displayWeather(response) {
   let cityName = response.data.name;
   let temp = Math.round(response.data.main.temp);
@@ -130,6 +162,8 @@ function displayWeather(response) {
   currentWind.innerHTML = `${wind}`;
   currentWeatherDescription.innerHTML = `${description}`;
   iconElement.innerHTML = `${choosePicture(icon)}`;
+
+  getForecast(response.data.coord);
 }
 /*-----x------ Show real weather -------x-----*/
 
