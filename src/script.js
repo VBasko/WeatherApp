@@ -219,13 +219,13 @@ function useCurrentPosition() {
 let currentLocationBtn = document.querySelector("#current-location");
 currentLocationBtn.addEventListener("click", useCurrentPosition);
 
-/*----------- Choosing Units --------------*/
+/*----------- Choosing Units --------------
 let celsiusTemperature = null;
 
 let celsius = document.querySelector("#celcius");
 let farhenheit = document.querySelector("#farhenheit");
 
-/*----------- Convert to Farhenheit --------------*/
+----------- Convert to Farhenheit --------------
 function convertToFarhenheit(event) {
   event.preventDefault();
   celsius.classList.remove("active");
@@ -235,7 +235,7 @@ function convertToFarhenheit(event) {
 
 farhenheit.addEventListener("click", convertToFarhenheit);
 
-/*----------- Convert to Celsius --------------*/
+----------- Convert to Celsius --------------
 function convertToCelsius(event) {
   event.preventDefault();
   celsius.classList.add("active");
@@ -244,3 +244,4 @@ function convertToCelsius(event) {
 }
 
 celsius.addEventListener("click", convertToCelsius);
+*/
