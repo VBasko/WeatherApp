@@ -22,9 +22,7 @@ function currentTime() {
 
   let dayAndTime = document.querySelector("#day-and-time");
   dayAndTime.innerHTML = `${day} ${hours}:${minutes}`;
-  setTimeout(currentTime, 1000);
 }
-currentTime();
 
 /*----------- Display searching city and weather --------------*/
 
@@ -119,27 +117,35 @@ let iconElement = document.querySelector("#weather-icon");
 
 axios.get(apiUrl).then(displayWeather);
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  return day;
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecastArray = response.data.daily;
+  console.log(forecastArray);
   let forecastArea = document.querySelector("#forecast-area");
 
   let forecastCard = "";
 
-  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu"];
-  forecastDays.forEach(function (day) {
-    forecastCard =
-      forecastCard +
-      `
+  forecastArray.forEach(function (day, index) {
+    if (index < 5) {
+      let icon = choosePicture(day.weather[0].icon);
+      forecastCard =
+        forecastCard +
+        `
       <div class="forecast-card">
-        <p class="day-of-week">${day}</p>
-          <span
-            class="iconify mini-icon"
-            data-icon="wi:day-cloudy"
-            style="color: #535659"          
-          ></span>
-        <p class="weather">26° / 19°</p>
+        <p class="day-of-week">${formatDate(day.dt)}</p>
+          ${icon}
+        <p class="weather">${Math.round(day.temp.max)}° / ${Math.round(
+          day.temp.min
+        )}°</p>
       </div>
     `;
+    }
   });
 
   forecastArea.innerHTML = forecastCard;
@@ -151,6 +157,7 @@ function getForecast(coordinates) {
 }
 
 function displayWeather(response) {
+  currentTime();
   let cityName = response.data.name;
   let temp = Math.round(response.data.main.temp);
   let humidity = response.data.main.humidity;
