@@ -115,7 +115,8 @@ let iconElement = document.querySelector("#weather-icon");
 
 axios.get(apiUrl).then(displayWeather);
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastArea = document.querySelector("#forecast-area");
 
   let forecastCard = "";
@@ -140,11 +141,9 @@ function displayForecast() {
   forecastArea.innerHTML = forecastCard;
 }
 
-displayForecast();
-
 function getForecast(coordinates) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
-  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayWeather(response) {
