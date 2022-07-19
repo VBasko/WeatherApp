@@ -9,6 +9,7 @@ As it obvious from the title, it's a weather website.
 
 - For searching I use [openweather API](https://openweathermap.org/).
 - It's also possible to use your current location to know the weather.
+- Units conversion is also working.
 
 While I was writing this code I've studied basic principles of coding (thanks to [SheCodes](https://www.shecodes.io/)).
 
