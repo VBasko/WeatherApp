@@ -151,7 +151,7 @@ function displayForecast(response) {
   forecastArea.innerHTML = forecastCard;
 }
 
-function getForecast(coordinates) {
+function getForecast(coordinates, units) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -173,8 +173,11 @@ function displayWeather(response) {
   currentWeatherDescription.innerHTML = `${description}`;
   iconElement.innerHTML = `${choosePicture(icon)}`;
 
-  getForecast(response.data.coord);
+  coords = response.data.coord;
+  getForecast(coords, "metric");
 }
+
+let coords;
 /*-----x------ Show real weather -------x-----*/
 
 function refreshHeaderSearch(event) {
@@ -219,29 +222,30 @@ function useCurrentPosition() {
 let currentLocationBtn = document.querySelector("#current-location");
 currentLocationBtn.addEventListener("click", useCurrentPosition);
 
-/*----------- Choosing Units --------------
+/*----------- Choosing Units --------------*/
 let celsiusTemperature = null;
 
 let celsius = document.querySelector("#celcius");
 let farhenheit = document.querySelector("#farhenheit");
 
------------ Convert to Farhenheit --------------
+/*----------- Convert to Farhenheit --------------*/
 function convertToFarhenheit(event) {
   event.preventDefault();
   celsius.classList.remove("active");
   farhenheit.classList.add("active");
   currentTemperature.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+  getForecast(coords, "imperial");
 }
 
 farhenheit.addEventListener("click", convertToFarhenheit);
 
------------ Convert to Celsius --------------
+/*----------- Convert to Celsius --------------*/
 function convertToCelsius(event) {
   event.preventDefault();
   celsius.classList.add("active");
   farhenheit.classList.remove("active");
   currentTemperature.innerHTML = Math.round(celsiusTemperature);
+  getForecast(coords, "metric");
 }
 
 celsius.addEventListener("click", convertToCelsius);
-*/
