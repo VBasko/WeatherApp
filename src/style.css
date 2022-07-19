@@ -161,9 +161,10 @@
   padding: 0 20px 20px;
 }
 
-#icon {
+#weather-icon svg {
   color: #535659;
-  font-size: 160px;
+  height: 160px;
+  width: 160px;
 }
 
 /*----------------Forecast---------*/
@@ -207,9 +208,12 @@
   padding: 0;
 }
 
-.forecast-card .mini-icon {
+.forecast-card svg {
   flex-shrink: 0;
-  font-size: 50px;
+  height: 40px;
+  width: 40px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .forecast-card .weather {

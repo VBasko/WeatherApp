@@ -32,71 +32,71 @@ function choosePicture(icon) {
   let pic = "";
   switch (icon) {
     case "01d":
-      pic = `<span class="iconify" data-icon="wi:day-sunny" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:day-sunny"></span>`;
       break;
     case "01n":
-      pic = `<span class="iconify" data-icon="wi:night-clear" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:night-clear"></span>`;
       break;
     case "02d":
-      pic = `<span class="iconify" data-icon="wi:day-cloudy" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:day-cloudy"></span>`;
       break;
     case "02n":
-      pic = `<span class="iconify" data-icon="wi:night-cloudy" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:night-cloudy"></span>`;
       break;
     case "03d":
-      pic = `<span class="iconify" data-icon="wi:cloud" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:cloud"></span>`;
 
       break;
     case "03n":
-      pic = `<span class="iconify" data-icon="wi:cloud" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:cloud"></span>`;
 
       break;
     case "04d":
-      pic = `<span class="iconify" data-icon="wi:cloudy" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:cloudy"></span>`;
 
       break;
     case "04n":
-      pic = `<span class="iconify" data-icon="wi:cloudy" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:cloudy"></span>`;
 
       break;
     case "09d":
-      pic = `<span class="iconify" data-icon="wi:showers" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:showers"></span>`;
 
       break;
     case "09n":
-      pic = `<span class="iconify" data-icon="wi:showers" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:showers"></span>`;
 
       break;
     case "10d":
-      pic = `<span class="iconify" data-icon="wi:day-rain-mix" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:day-rain-mix"></span>`;
 
       break;
     case "10n":
-      pic = `<span class="iconify" data-icon="wi:night-rain-mix" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:night-rain-mix"></span>`;
 
       break;
     case "11d":
-      pic = `<span class="iconify" data-icon="wi:day-lighting" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:day-lighting"></span>`;
 
       break;
     case "11n":
-      pic = `<span class="iconify" data-icon="wi:night-lighting" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:night-lighting"></span>`;
 
       break;
     case "13d":
-      pic = `<span class="iconify" data-icon="wi:snowflake-cold" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:snowflake-cold"></span>`;
 
       break;
     case "13n":
-      pic = `<span class="iconify" data-icon="wi:snowflake-cold" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:snowflake-cold"></span>`;
 
       break;
     case "50d":
-      pic = `<span class="iconify" data-icon="wi:day-fog" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:day-fog"></span>`;
 
       break;
     case "50n":
-      pic = `<span class="iconify" data-icon="wi:night-fog" id="icon"></span>`;
+      pic = `<span class="iconify" data-icon="wi:night-fog"></span>`;
 
       break;
   }
